@@ -22,9 +22,12 @@ $tunjangan			= $_POST['tunjangan'];
 // $tgl_gajian=date("Y-m-d", strtotime($tanggalgajian));
 $tgl_lahir=date("Y-m-d", strtotime($tgl));
 $tgg_masuk = date("Y-m-d", strtotime($tanggal_masuk));
-$result = insert("INSERT INTO pegawai (id,nip,nama_lengkap,tanggal_lahir,jenis_kelamin,agama,alamat,no_tlp,tanggal_masuk,status_pernikahan,status_kerja,jabatan_id,gaji_pokok,tunjangan) VALUES 
+$result = insert("INSERT INTO pegawai (id,nip,nama_lengkap,tanggal_lahir,jenis_kelamin,agama,alamat,no_tlp,tanggal_masuk,status_pernikahan,status_kerja,jabatan_id,gajih_pokok,tunjangan) VALUES 
                                         (NULL,'$nip','$nama','$tgl_lahir','$jk','$agama','$alamat','$tlp','$tgg_masuk','$status_pernikahan','$status_pekerjaan','$jabatan','$gajihpokok','$tunjangan');");
 if($result ==1 ){
     header('Location: tampil_pegawai.php');
+}else{
+    echo "<script>alert('gagal bos ku')</script>";
+    header('Location: add_pegawai.php');
 }
 ?>

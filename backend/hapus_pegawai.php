@@ -5,7 +5,7 @@ if(!isset($_SESSION["username"])){
 }
 include 'model/proses.php';
 $nip =$_GET['id'];
-	$query = "DELETE FROM pegawai WHERE nip=".$nip;
+	$query = "DELETE FROM pegawai WHERE id=$nip";
 	if(mysqli_query($con,$query)){
 		echo "<script>
 			document.location.href='tampil_pegawai.php'
